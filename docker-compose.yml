@@ -1,0 +1,12 @@
+services:
+  pyside6-app:
+    build: .
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XAUTHORITY=/tmp/.docker.xauth
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
+    network_mode: host
+    # Remove the container automatically when it exits
+    restart: "no"
