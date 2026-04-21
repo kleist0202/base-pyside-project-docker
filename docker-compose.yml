@@ -5,8 +5,13 @@ services:
       - DISPLAY=${DISPLAY}
       - XAUTHORITY=/tmp/.docker.xauth
     volumes:
+      # X11 display access
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
+      # Live source editing — changes reflect without rebuild
+      - ./src:/app/src
+      # IDE support — Docker populates this on first run;
+      # point your IDE interpreter to .venv/bin/python
+      - ./.venv:/app/.venv
     network_mode: host
-    # Remove the container automatically when it exits
     restart: "no"

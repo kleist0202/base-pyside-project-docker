@@ -20,7 +20,7 @@ class MainWindow(QMainWindow):
 
         self._count = 0
         self.label = QLabel("Count: 0")
-        self.label.setAlignment(Qt.AlignCenter)
+        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label.setStyleSheet("font-size: 24px; font-weight: bold;")
 
         btn = QPushButton("Click me!")

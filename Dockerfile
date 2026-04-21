@@ -37,4 +37,4 @@ COPY . .
 # Force XCB backend so the app works on both X11 and XWayland hosts
 ENV QT_QPA_PLATFORM=xcb
 
-CMD ["python", "src/main.py"]
+ENTRYPOINT ["bash", "entrypoint.sh"]
